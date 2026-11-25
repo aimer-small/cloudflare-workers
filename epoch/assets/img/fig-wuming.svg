@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img">
+  <defs>
+    <filter id="fblur1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <filter id="fblur2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="fblur3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="fpaper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="7" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="t">
+        <feFuncA type="linear" slope="0.055"/>
+      </feComponentTransfer>
+      <feComposite in="t" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="fwash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DDCE" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#E4DDCE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#E4DDCE" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="fjadewash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6E8E1" stop-opacity="0"/>
+      <stop offset="1" stop-color="#D6E8E1" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="fbrasswash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDE2C9" stop-opacity="0"/>
+      <stop offset="1" stop-color="#EDE2C9" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs><rect width="900" height="1200" fill="#F7F4EC"/><rect width="900" height="1200" fill="#F7F4EC" filter="url(#fpaper)" opacity="0.9"/><rect x="40" y="40" width="820" height="1120" fill="none" stroke="#C9C2B2" stroke-width="1"/><rect x="52" y="52" width="796" height="1096" fill="none" stroke="#2E7D6E" stroke-width="0.6" opacity="0.4"/><text x="804" y="120" text-anchor="middle" font-size="34" fill="#1C2624" font-family="serif">无</text><text x="804" y="166" text-anchor="middle" font-size="34" fill="#1C2624" font-family="serif">名</text><text x="754" y="132" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">守</text><text x="754" y="154" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">碑</text><text x="754" y="176" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">人</text><text x="754" y="198" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif"> </text><text x="754" y="220" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">·</text><text x="754" y="242" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif"> </text><text x="754" y="264" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">第</text><text x="754" y="286" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">四</text><text x="754" y="308" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">字</text><g transform="translate(782,1050)" opacity="0.8"><rect x="0" y="0" width="46" height="46" fill="#2E7D6E" rx="1"/><text x="23.0" y="31.28" text-anchor="middle" font-size="23.92" fill="#F7F4EC" font-family="serif" letter-spacing="0">碑</text></g><rect x="230" y="240" width="440" height="700" fill="#EFEAE0" stroke="#5A6B66" stroke-width="1.6" opacity="0.9"/><rect x="230" y="240" width="440" height="700" fill="none" stroke="#1C2624" stroke-width="0.8" opacity="0.4"/><text x="450" y="380" text-anchor="middle" font-size="86" fill="#1C2624" font-family="serif" opacity="0.85">界</text><text x="450" y="510" text-anchor="middle" font-size="86" fill="#1C2624" font-family="serif" opacity="0.85">痕</text><text x="450" y="640" text-anchor="middle" font-size="86" fill="#1C2624" font-family="serif" opacity="0.85">守</text><rect x="392" y="770" width="116" height="116" fill="none" stroke="#2E7D6E" stroke-width="1.6" stroke-dasharray="8 8" opacity="0.7"/><text x="450" y="850" text-anchor="middle" font-size="40" fill="#2E7D6E" opacity="0.35" font-family="serif">?</text><g transform="translate(450,1120) scale(0.92)"><path d="M -46 -300 C -60 -220, -78 -120, -92 0 L 92 0 C 78 -120, 60 -220, 46 -300 Z" fill="#1C2624" opacity="0.9"/><path d="M -46 -300 C -30 -330, 30 -330, 46 -300 L 40 -270 L -40 -270 Z" fill="#1C2624" opacity="0.95"/><circle cx="0" cy="-352" r="34" fill="#1C2624"/><rect x="-12" y="-322" width="24" height="26" fill="#1C2624"/></g><path d="M 500 830 Q 560 800 590 760" fill="none" stroke="#1C2624" stroke-width="15" stroke-linecap="round"/><circle cx="596" cy="754" r="11" fill="#1C2624"/><g transform="translate(660,1090) rotate(24)"><rect x="0" y="0" width="90" height="7" fill="#5A6B66"/><path d="M 90 0 L 108 3.5 L 90 7 Z" fill="#1C2624"/></g><line x1="80" y1="1120" x2="820" y2="1120" stroke="#5A6B66" stroke-width="1.2" opacity="0.5"/></svg>

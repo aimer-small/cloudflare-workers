@@ -1,5 +1,3 @@
-name = "epoch-of-the-rift"
-compatibility_date = "2025-01-01"
-
-# 静态资源模式：直接托管 epoch 目录
-assets = { directory = "./epoch" }
+name = "epoch"
+compatibility_date = "2026-11-25"
+pages_build_output_dir = "."

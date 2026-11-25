@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <defs>
+    <filter id="sblur1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <filter id="sblur2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="sblur3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="spaper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="7" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="t">
+        <feFuncA type="linear" slope="0.055"/>
+      </feComponentTransfer>
+      <feComposite in="t" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="swash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DDCE" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#E4DDCE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#E4DDCE" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="sjadewash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6E8E1" stop-opacity="0"/>
+      <stop offset="1" stop-color="#D6E8E1" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="sbrasswash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDE2C9" stop-opacity="0"/>
+      <stop offset="1" stop-color="#EDE2C9" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs><rect width="1600" height="900" fill="#F7F4EC"/><rect width="1600" height="900" fill="#F7F4EC" filter="url(#spaper)" opacity="0.9"/><ellipse cx="400" cy="450" rx="480" ry="400" fill="#D6E8E1" opacity="0.6" filter="url(#sblur3)"/><ellipse cx="1200" cy="450" rx="480" ry="400" fill="#EDE2C9" opacity="0.6" filter="url(#sblur3)"/><circle cx="800" cy="430" r="230" fill="#F7F4EC" opacity="0.9" filter="url(#sblur3)"/><circle cx="800" cy="430" r="170" fill="#F7F4EC" opacity="0.98"/><path d="M 800 260 A 170 170 0 0 0 800 600" fill="none" stroke="#2E7D6E" stroke-width="2.4" opacity="0.85"/><path d="M 800 260 A 170 170 0 0 1 800 600" fill="none" stroke="#9A7B3F" stroke-width="2.4" opacity="0.85"/><path d="M 800 260 A 170 170 0 0 0 800 600 Z" fill="#D6E8E1" opacity="0.45"/><path d="M 800 260 A 170 170 0 0 1 800 600 Z" fill="#EDE2C9" opacity="0.45"/><line x1="800" y1="260" x2="800" y2="600" stroke="#1C2624" stroke-width="1.0" opacity="0.4"/><line x1="625.4" y1="341.0" x2="609.3" y2="332.8" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="657.1" y1="295.8" x2="644.0" y2="283.5" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="700.2" y1="261.3" x2="691.1" y2="245.8" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="751.3" y1="240.2" x2="746.8" y2="222.7" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="806.2" y1="234.1" x2="806.7" y2="216.1" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="860.6" y1="243.6" x2="866.1" y2="226.5" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="910.2" y1="267.9" x2="920.3" y2="253.0" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="951.0" y1="305.1" x2="964.9" y2="293.6" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="979.9" y1="352.2" x2="996.4" y2="345.0" stroke="#2E7D6E" stroke-width="1.0" opacity="0.6"/><line x1="990" y1="260" x2="1040" y2="260" stroke="#9A7B3F" stroke-width="0.9" opacity="0.55"/><line x1="990" y1="345" x2="1040" y2="345" stroke="#9A7B3F" stroke-width="0.9" opacity="0.55"/><line x1="990" y1="430" x2="1040" y2="430" stroke="#9A7B3F" stroke-width="0.9" opacity="0.55"/><line x1="990" y1="515" x2="1040" y2="515" stroke="#9A7B3F" stroke-width="0.9" opacity="0.55"/><line x1="990" y1="600" x2="1040" y2="600" stroke="#9A7B3F" stroke-width="0.9" opacity="0.55"/><text x="540" y="680" text-anchor="middle" font-size="20" fill="#2E7D6E" font-family="serif" letter-spacing="6">执 月</text><text x="540" y="712" text-anchor="middle" font-size="12" fill="#5A6B66" font-family="serif">玄洲 · 命名</text><text x="1060" y="680" text-anchor="middle" font-size="20" fill="#9A7B3F" font-family="monospace" letter-spacing="3">ORI-0001</text><text x="1060" y="712" text-anchor="middle" font-size="12" fill="#5A6B66" font-family="serif">奥瑞恩 · 编号</text><text x="800" y="120" text-anchor="middle" font-size="34" fill="#1C2624" font-family="serif" letter-spacing="12">同 一 物</text><text x="800" y="164" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif" letter-spacing="5">纪元 1529 · 两种叙述</text><text x="800" y="820" text-anchor="middle" font-size="15" fill="#3A4A46" font-family="serif" letter-spacing="2">而那颗星在夜里继续移动</text><g transform="translate(1480,60)" opacity="0.8"><rect x="0" y="0" width="46" height="46" fill="#B04A38" rx="1"/><text x="23.0" y="31.28" text-anchor="middle" font-size="23.92" fill="#F7F4EC" font-family="serif" letter-spacing="0">合</text></g></svg>

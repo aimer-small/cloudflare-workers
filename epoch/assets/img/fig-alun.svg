@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img">
+  <defs>
+    <filter id="fblur1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+    <filter id="fblur2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="fblur3" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="fpaper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="7" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="t">
+        <feFuncA type="linear" slope="0.055"/>
+      </feComponentTransfer>
+      <feComposite in="t" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="fwash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4DDCE" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#E4DDCE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#E4DDCE" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="fjadewash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D6E8E1" stop-opacity="0"/>
+      <stop offset="1" stop-color="#D6E8E1" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="fbrasswash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDE2C9" stop-opacity="0"/>
+      <stop offset="1" stop-color="#EDE2C9" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs><rect width="900" height="1200" fill="#F7F4EC"/><rect width="900" height="1200" fill="#F7F4EC" filter="url(#fpaper)" opacity="0.9"/><rect x="40" y="40" width="820" height="1120" fill="none" stroke="#C9C2B2" stroke-width="1"/><rect x="52" y="52" width="796" height="1096" fill="none" stroke="#2E7D6E" stroke-width="0.6" opacity="0.4"/><text x="804" y="120" text-anchor="middle" font-size="34" fill="#1C2624" font-family="serif">阿</text><text x="804" y="166" text-anchor="middle" font-size="34" fill="#1C2624" font-family="serif">鸾</text><text x="754" y="132" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">青</text><text x="754" y="154" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">鸾</text><text x="754" y="176" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">之</text><text x="754" y="198" text-anchor="middle" font-size="13" fill="#5A6B66" font-family="serif">影</text><g transform="translate(782,1050)" opacity="0.8"><rect x="0" y="0" width="46" height="46" fill="#2E7D6E" rx="1"/><text x="23.0" y="31.28" text-anchor="middle" font-size="23.92" fill="#F7F4EC" font-family="serif" letter-spacing="0">鸾</text></g><circle cx="450" cy="420" r="230" fill="#D6E8E1" opacity="0.45" filter="url(#fblur3)"/><circle cx="450" cy="420" r="170" fill="#F7F4EC" opacity="0.92"/><circle cx="450" cy="420" r="170" fill="none" stroke="#2E7D6E" stroke-width="1.4" opacity="0.45"/><circle cx="450" cy="420" r="140" fill="none" stroke="#8FC4B4" stroke-width="0.8" opacity="0.4"/><path d="M 789 251 q 7 -9 19 -4" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.26" transform="rotate(360 789 251)"/><path d="M 169 726 q 10 -13 26 -5" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.27" transform="rotate(320 169 726)"/><path d="M 790 417 q 12 -16 31 -6" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.41" transform="rotate(336 790 417)"/><path d="M 764 779 q 8 -10 19 -4" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.38" transform="rotate(317 764 779)"/><path d="M 310 297 q 15 -18 37 -7" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.48" transform="rotate(210 310 297)"/><path d="M 653 1014 q 12 -15 30 -6" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.38" transform="rotate(251 653 1014)"/><path d="M 271 1010 q 10 -12 25 -5" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.49" transform="rotate(281 271 1010)"/><path d="M 562 252 q 14 -18 36 -7" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.26" transform="rotate(240 562 252)"/><path d="M 116 615 q 7 -9 19 -4" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.35" transform="rotate(333 116 615)"/><path d="M 463 501 q 13 -16 33 -7" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.29" transform="rotate(330 463 501)"/><path d="M 357 662 q 10 -12 25 -5" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.36" transform="rotate(214 357 662)"/><path d="M 401 746 q 12 -15 30 -6" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.50" transform="rotate(32 401 746)"/><path d="M 343 522 q 11 -13 27 -5" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.49" transform="rotate(335 343 522)"/><path d="M 459 493 q 8 -10 20 -4" fill="none" stroke="#2E7D6E" stroke-width="1.2" opacity="0.25" transform="rotate(322 459 493)"/><g transform="translate(450,1090)"><path d="M -40 -300 C -56 -200, -86 -90, -104 0 L 104 0 C 86 -90, 56 -200, 40 -300 Z" fill="#1C2624" opacity="0.88"/><path d="M -40 -300 C -26 -326, 26 -326, 40 -300 L 34 -272 L -34 -272 Z" fill="#1C2624"/><circle cx="0" cy="-350" r="32" fill="#1C2624"/><rect x="-11" y="-322" width="22" height="24" fill="#1C2624"/><path d="M -32 -360 C -46 -300, -44 -220, -38 -170 L -26 -170 C -30 -230, -28 -300, -20 -352 Z" fill="#1C2624"/><path d="M 32 -360 C 46 -300, 44 -220, 38 -170 L 26 -170 C 30 -230, 28 -300, 20 -352 Z" fill="#1C2624"/><rect x="-46" y="-190" width="92" height="10" fill="#2E7D6E" opacity="0.85"/><path d="M -40 -290 C -80 -250, -96 -190, -92 -150 L -64 -156 C -66 -200, -56 -250, -30 -282 Z" fill="#1C2624" opacity="0.9"/><path d="M 40 -290 C 80 -250, 96 -190, 92 -150 L 64 -156 C 66 -200, 56 -250, 30 -282 Z" fill="#1C2624" opacity="0.9"/></g><circle cx="560" cy="880" r="26" fill="#F7F4EC" stroke="#2E7D6E" stroke-width="1.6"/><circle cx="560" cy="880" r="26" fill="#D6E8E1" opacity="0.5"/><text x="120" y="1120" font-size="15" fill="#3A4A46" font-family="serif" letter-spacing="2">「它不是我衔来的。」</text></svg>

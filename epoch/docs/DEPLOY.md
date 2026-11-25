@@ -1,177 +1,96 @@
-# 部署指南
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: e9a66d4f35ebbacd2fb7fcf643613b8a_fce3d49ce8a911f1afe3525400ffa3eb
+    ReservedCode1: wA6rvLGHfmhu815tTZ/R/4iZEtCyeqleiSEs46HBTCsEhjuB8HyZnR1RhuCs27JQjNeVS84uHPkkDDOAGbRpqNvJt56nXWRRcZO0i+h5OtSH39DTg0iv014lus6b8KDQrisVAoTUJ0BFR6SGc91qMRtZhA2aEqUb92/R8k6JRxYDtruTnMw5NGqaAmM=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: e9a66d4f35ebbacd2fb7fcf643613b8a_fce3d49ce8a911f1afe3525400ffa3eb
+    ReservedCode2: wA6rvLGHfmhu815tTZ/R/4iZEtCyeqleiSEs46HBTCsEhjuB8HyZnR1RhuCs27JQjNeVS84uHPkkDDOAGbRpqNvJt56nXWRRcZO0i+h5OtSH39DTg0iv014lus6b8KDQrisVAoTUJ0BFR6SGc91qMRtZhA2aEqUb92/R8k6JRxYDtruTnMw5NGqaAmM=
+---
 
-站点为纯静态资源（HTML + CSS + JS + SVG + WAV），无服务端逻辑，可部署到任意静态托管。
+# 部署说明 · 裂界纪 2.0
+
+纯静态站点，零构建、零依赖。把整个目录上传即可。
 
 ---
 
-## 一、Cloudflare Pages（推荐）
+## 一、体积
 
-### 方式 A：Wrangler CLI
-
-```bash
-# 安装
-npm install -g wrangler
-
-# 登录
-wrangler login
-
-# 部署（在仓库根目录执行）
-wrangler pages deploy epoch --project-name=epoch-of-the-rift
-```
-
-首次部署会创建项目，之后每次执行即更新。
-
-### 方式 B：Git 集成（自动部署）
-
-1. 打开 Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
-2. 选择仓库 `aimer-small/cloudflare-workers`
-3. 构建设置：
-
-| 项 | 值 |
+| 部分 | 大小 |
 |---|---|
-| Framework preset | None |
-| Build command | （留空） |
-| Build output directory | `epoch` |
-| Root directory | （留空） |
+| 2.0 主站（HTML + CSS + JS + 15 张 SVG） | 约 320KB |
+| `v1/` 1.0 归档（含 6.6MB 音频） | 约 7.2MB |
 
-4. 保存并部署。之后每次 push 到 `main` 自动重新部署。
-
-### 方式 C：直接上传
-
-Dashboard → Pages → 项目 → Create deployment → 拖入 `epoch` 文件夹。
+如不需要 1.0 归档，删除 `v1/` 即可，主站仍为 320KB。
 
 ---
 
-## 二、Cloudflare Workers（静态资源模式）
+## 二、Cloudflare Pages
 
-若需以 Worker 形式托管（可叠加自定义路由、鉴权、A/B 测试）：
+### 方式 A：控制台直传
 
-`wrangler.toml`：
+1. Workers & Pages → Create → Pages → Upload assets
+2. 上传本目录全部内容（`index.html` 须在根）
+3. 完成，绑定自定义域名（可选）
 
-```toml
-name = "epoch-of-the-rift"
-compatibility_date = "2025-01-01"
-assets = { directory = "./epoch" }
-```
+### 方式 B：Wrangler
 
 ```bash
-wrangler deploy
+npm i -g wrangler
+wrangler pages deploy . --project-name=epoch
 ```
 
-> Workers 静态资源单文件上限 25 MB（免费版），`bgm-epoch.wav` 为 6.3 MB，符合要求。
+`wrangler.toml` 已配置 `pages_build_output_dir = "."`。
 
 ---
 
-## 三、其他平台
+## 三、GitHub Pages
 
-### Vercel
+仓库 Settings → Pages → Source 选 `Deploy from a branch`，分支 `main`，目录 `/epoch`（或把本目录设为仓库根）。
+
+`.nojekyll` 已放置，避免 Jekyll 处理下划线开头的 `_headers`。
+
+---
+
+## 四、本地预览
 
 ```bash
-vercel --prod epoch
+cd <本目录>
+python3 -m http.server 8000
+# 打开 http://127.0.0.1:8000
 ```
 
-### Netlify
-
-```bash
-netlify deploy --prod --dir=epoch
-```
-
-### GitHub Pages
-
-1. Settings → Pages → Source 选 `main` 分支
-2. 若站点在子目录，需在 `index.html` 中把 `assets/...` 改为 `/cloudflare-workers/epoch/assets/...`，或改用相对路径 `./assets/...`（当前已是相对路径，可直接用）
-
-### Nginx
-
-```nginx
-server {
-    listen 80;
-    server_name epoch.example.com;
-    root /var/www/epoch;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-
-    # SVG 与 WAV 长缓存
-    location ~* \.(svg|wav|css|js)$ {
-        expires 30d;
-        add_header Cache-Control "public, immutable";
-    }
-
-    gzip on;
-    gzip_types text/css application/javascript image/svg+xml;
-}
-```
+不要直接双击 `index.html`（`file://` 协议下部分浏览器会拦截 SVG 内联脚本与相对路径解析）。
 
 ---
 
-## 四、缓存与压缩建议
+## 五、缓存与响应头
 
-### `_headers`（Cloudflare Pages / Netlify）
+`_headers` 提供：
 
-放在 `epoch/_headers`：
-
-```
-/assets/img/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/audio/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/css/*
-  Cache-Control: public, max-age=604800
-
-/assets/js/*
-  Cache-Control: public, max-age=604800
-
-/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-```
-
-### 音频压缩（可选）
-
-6.3 MB 的 WAV 对移动端偏大。转码方案：
-
-```bash
-# MP3 96kbps（约 1.8 MB）
-ffmpeg -i bgm-epoch.wav -codec:a libmp3lame -b:a 96k bgm-epoch.mp3
-
-# Opus 64kbps（约 1.2 MB，需浏览器支持）
-ffmpeg -i bgm-epoch.wav -codec:a libopus -b:a 64k bgm-epoch.opus
-```
-
-转码后修改 `assets/js/audio.js`：
-
-```js
-var SRC = 'assets/audio/bgm-epoch.mp3';
-```
+- HTML：`no-cache`，保证改版即时可见
+- CSS / JS / SVG：`max-age=604800`，一周强缓存
+- 全站：`X-Content-Type-Options: nosniff`、`Referrer-Policy: strict-origin-when-cross-origin`、`Permissions-Policy` 关闭无关能力
 
 ---
 
-## 五、部署前检查清单
+## 六、验证清单
 
-- [ ] `index.html` 中所有 `assets/...` 路径为相对路径（当前已是）
-- [ ] 音频文件存在且可访问（`curl -I https://域名/assets/audio/bgm-epoch.wav` 返回 200）
-- [ ] SVG 在目标浏览器正常渲染（Safari 对 `filter` 支持较弱，已做降级）
-- [ ] 移动端首屏高度正常（使用 `100svh`，iOS 15+ 支持）
-- [ ] 音景默认静音，点击后才播放
-- [ ] `prefers-reduced-motion` 下动效关闭
+部署后逐项确认：
+
+1. 首屏底色为纸白 `#F7F4EC`，不是黑
+2. 页面**无横向滚动条**（2.0 修复了出血图版溢出）
+3. 东线整段偏玉青，西线整段偏黄铜，两色不混在同一屏
+4. 纪年表在手机上折叠为单列，年份在左、东/西标签前缀自动出现
+5. 页脚「1.0 归档」能打开暗色原版
+6. 系统开启「减少动态效果」后，内容直接显示、无位移动画
 
 ---
 
-## 六、常见问题
+## 七、已知限制
 
-**Q：音频不播放？**
-A：浏览器要求用户交互后才能播放音频。点击右下角音景按钮即可。若仍无声，检查 WAV 是否 404，或查看控制台是否触发降级合成。
-
-**Q：SVG 显示为空白？**
-A：部分 CDN 对 `.svg` 的 MIME 类型配置错误。确保返回 `Content-Type: image/svg+xml`。
-
-**Q：字体不对？**
-A：站点使用系统字体栈（Songti SC / Noto Serif SC / STSong / SimSun）。Linux 服务器无中文字体时，客户端仍会用自己的系统字体渲染，不影响显示。
-
-**Q：部署后样式错乱？**
-A：检查 `base.css` 与 `site.css` 是否都加载成功（`site.css` 含图片适配与响应式修正，缺失会导致图片撑破布局）。
+- 中文字体全部依赖系统字体，未加载 Web Font。极少数无中文字体的环境（如部分 Linux 容器）中文会显示为方框，需系统安装 Noto CJK。
+- 2.0 无背景音乐。1.0 的音景仅在 `v1/` 内，需手动点击播放。
+- 所有图像为 SVG，矢量无损放大，但每张约 8—25KB，首屏建议保持连接复用（HTTP/2 或 HTTP/3）。
+*（内容由AI生成，仅供参考）*
