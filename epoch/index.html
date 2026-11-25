@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070C0E">
+<title>裂界纪 · Epoch of the Rift</title>
+<meta name="description" content="环宇大陆纪元一一二七年，大衍之变。一道宽三里、每年东移七里的界痕，把世界劈成两半：东侧玄洲以身为炉，西侧奥瑞恩以名为咒。三次界战，至今未终。">
+<meta property="og:title" content="裂界纪 · Epoch of the Rift">
+<meta property="og:description" content="一道界痕，两种本体论。三次界战，至今未终。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<canvas id="field" aria-hidden="true"></canvas>
+
+<nav class="nav" aria-label="主导航">
+  <a class="nav__brand" href="#top">
+    <span>裂界纪</span>
+    <em>Epoch of the Rift</em>
+  </a>
+  <button class="nav__toggle" aria-label="展开导航" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav__links">
+    <a href="#prologue">序</a>
+    <a href="#realms">两界</a>
+    <a href="#figures">人物</a>
+    <a href="#scenes">景物</a>
+    <a href="#moments">场景</a>
+    <a href="#nodes">节点</a>
+    <a href="#soundscape">音景</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero__bg">
+    <img src="assets/img/hero-rift.svg" alt="界痕横贯天际，两侧分别是玄洲群山与奥瑞恩巨城" fetchpriority="high">
+  </div>
+  <div class="hero__veil"></div>
+  <div class="hero__inner">
+    <p class="hero__kicker">A World Split in Two</p>
+    <h1 class="reveal-chars">裂界纪</h1>
+    <p class="hero__sub">
+      纪元一一二七年，大衍之变。<br>
+      一道宽三里、每年东移七里的界痕，把环宇大陆劈成两半。<br>
+      东侧的人以身为炉，西侧的人以名为咒。<br>
+      他们争的不是疆土，是「什么才算存在」。
+    </p>
+    <div class="hero__meta">
+      <span>纪元 1127 — 至今</span><i></i>
+      <span>界痕宽 3 里 · 年移 7 里</span><i></i>
+      <span>三次界战</span>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <em></em>
+  </div>
+</header>
+
+<main class="chronicle">
+
+  <!-- ============ 序 ============ -->
+  <section class="section" id="prologue">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Prologue · 序</span>
+        <h2>世界不是被打碎的，是被问碎的</h2>
+        <p>
+          大衍之变没有敌人。没有天罚，没有神战，没有陨星。那天清晨，环宇大陆中央的麦田里出现了一道细线，
+          宽不过一指。农人弯腰去看，线里没有底。三天后它宽了三尺，三个月后宽了三里。
+          学者们后来把它命名为「界痕」，并在命名的那一刻发现——他们无法就「它是什么」达成一致。
+        </p>
+      </div>
+      <div class="sec-head__r">1127 A.D.E.</div>
+    </div>
+
+    <div class="plates plates--2">
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-rift.svg" alt="界痕：一道发光的地裂，两侧地貌截然不同" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>界痕</h3>
+            <p>不是裂缝，是伤口。它发光，因为它还在疼。宽三里，每年东移七里，从不偏差——这是全大陆唯一一件两界都承认的事实。</p>
+          </div>
+          <span class="plate__tag">Rift</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-gate.svg" alt="界门：两界唯一可通行之处，门框一半符箓一半刻度" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>界门</h3>
+            <p>两界唯一可通行之处。门框一半刻着符箓，一半刻着七十二道刻度。守门人每七年换一次，因为七年之后，他们就开始听不懂自己那一侧的话。</p>
+          </div>
+          <span class="plate__tag">Gate</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 一 · 两界 ============ -->
+  <section class="section" id="realms">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter I · 两界</span>
+        <h2>同一道痕，两种本体论</h2>
+        <p>
+          界痕两侧的人，看着同一道光，得出了两个互不相容的结论。这不是正邪之争，也不是资源之争。
+          这是两种关于「存在」的定义，各自完备，各自自洽，因此无法调和。
+        </p>
+      </div>
+      <div class="sec-head__r">Two Ontologies</div>
+    </div>
+
+    <div class="plates plates--2">
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-kunlun.svg" alt="昆仑：云海之上的九峰，碑在最中间那座" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>玄洲 · 以身为炉</h3>
+            <p>
+              东侧。炼气士不取名，只取号——因为名字是外物，而外物会被夺走。他们把身体当作炉子，
+              把气当作柴，把一生当作一次漫长的燃烧。符是气的走向图，不是咒语；画符不是命令世界，是请世界顺着走。
+            </p>
+          </div>
+          <span class="plate__tag">Xuan Zhou</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate figure--orion" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-orion-city.svg" alt="奥瑞恩巨城：黄铜与几何构成的城，每块砖都有编号" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>奥瑞恩 · 以名为咒</h3>
+            <p>
+              西侧。律法师相信：凡被命名的，才真实存在；凡未被命名的，可被抹去。他们的法阵是圆，圆上是七十二道刻度，
+              对应七十二个音节。名字是咒，改名等于改命。所以他们的孩子到七岁才取名——那是他们第一次真正出生。
+            </p>
+          </div>
+          <span class="plate__tag">Orion</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <!-- ============ 二 · 人物 ============ -->
+  <section class="section" id="figures">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter II · 人物</span>
+        <h2>六个人，站在同一道痕的两边</h2>
+        <p>
+          他们从未同时出现在一个房间里。他们甚至不承认对方是人——玄洲说西侧的人「有名无身」，
+          奥瑞恩说东侧的人「有身无名」。但他们都做过同一件事：在夜里，独自走到界痕边上，往里看。
+        </p>
+      </div>
+      <div class="sec-head__r">Six Figures</div>
+    </div>
+
+    <div class="figures">
+      <article class="figure" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-yuxu.svg" alt="玉虚子，守碑人" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Xuan Zhou · 01</p>
+          <h3 class="figure__name">玉虚子<small>Yu Xu Zi</small></h3>
+          <p class="figure__title">守碑人</p>
+          <p class="figure__desc">昆仑碑前守了四十七年。他不识数，但记得碑上每一道刻痕的位置。他说碑不是用来记年份的，是用来记名字的——那些被界痕吞掉、两界都不再提起的名字。</p>
+          <blockquote class="figure__quote">「碑上刻的不是年份，是我们忘掉的名字。」</blockquote>
+        </div>
+      </article>
+      <article class="figure" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-shenyan.svg" alt="沈砚，界痕测绘者" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Xuan Zhou · 02</p>
+          <h3 class="figure__name">沈砚<small>Shen Yan</small></h3>
+          <p class="figure__title">界痕测绘者</p>
+          <p class="figure__desc">三十年，每年走一遍界痕，用步量，用绳量，用星量。他的图册有三十卷，每一卷的结论都一样：东移七里。他不信这个结论，所以他还在量。</p>
+          <blockquote class="figure__quote">「我量了三十年，它每年走七里，从不偏差。偏差的是我们。」</blockquote>
+        </div>
+      </article>
+      <article class="figure" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-yunxiu.svg" alt="云岫，少年剑修" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Xuan Zhou · 03</p>
+          <h3 class="figure__name">云岫<small>Yun Xiu</small></h3>
+          <p class="figure__title">少年剑修</p>
+          <p class="figure__desc">十七岁，剑很快，快过同门所有人。他没见过界战，只见过界战留下的空村子。他一直在想一个没人回答的问题：如果剑够快，能不能在东西被抹掉之前，把它抢回来。</p>
+          <blockquote class="figure__quote">「师父说剑要快。可我想知道，快过界痕，能不能追回什么。」</blockquote>
+        </div>
+      </article>
+      <article class="figure figure--orion" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-auriel.svg" alt="奥瑞尔，首席律法师" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Orion · 01</p>
+          <h3 class="figure__name">奥瑞尔<small>Auriel</small></h3>
+          <p class="figure__title">首席律法师</p>
+          <p class="figure__desc">七十二音节里，他能完整念出六十四个。剩下八个，念错一个就会抹掉自己。他主张对玄洲执行「除名」——不是杀死他们，是让世界不再记得他们曾经存在。</p>
+          <blockquote class="figure__quote">「凡未被命名者，不存于法。凡不存于法者，可被抹去。」</blockquote>
+        </div>
+      </article>
+      <article class="figure figure--orion" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-cassia.svg" alt="卡西娅，星图师" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Orion · 02</p>
+          <h3 class="figure__name">卡西娅<small>Cassia</small></h3>
+          <p class="figure__title">星图师</p>
+          <p class="figure__desc">她发现星图上有两个北。一个指向玄洲的昆仑，一个指向奥瑞恩地下的某处。她把这个发现报上去，第二天她的名字从所有档案里消失了三个时辰——那是警告。</p>
+          <blockquote class="figure__quote">「星图上有两个北。一个在玄洲，一个在我们脚下。」</blockquote>
+        </div>
+      </article>
+      <article class="figure figure--orion" data-reveal>
+        <div class="figure__portrait">
+          <img src="assets/img/fig-severus.svg" alt="塞维鲁，界战统帅" loading="lazy">
+        </div>
+        <div class="figure__body">
+          <p class="figure__side">Orion · 03</p>
+          <h3 class="figure__name">塞维鲁<small>Severus</small></h3>
+          <p class="figure__title">界战统帅</p>
+          <p class="figure__desc">打过三次界战。第一次为疆土，第二次为死者，第三次他站在阵前，发现自己说不出理由。他还是下令了。他现在每天念一遍自己的名字，怕忘。</p>
+          <blockquote class="figure__quote">「我打过三次界战。第三次——我不知道为什么。」</blockquote>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 三 · 景物 ============ -->
+  <section class="section" id="scenes">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter III · 景物</span>
+        <h2>三处地方，三种看世界的方式</h2>
+        <p>
+          玄洲把山当作呼吸，奥瑞恩把城当作语法，界痕把两者都当作错误。
+          这三处地方，是整部纪年里被画过最多次的——因为它们是唯一三个，两界都承认存在的地方。
+        </p>
+      </div>
+      <div class="sec-head__r">Three Places</div>
+    </div>
+
+    <div class="plates plates--3">
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-kunlun.svg" alt="昆仑：云海之上九峰如齿" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>昆仑</h3>
+            <p>云海之上，九峰如齿。碑在最中间那座。峰顶终年不化的不是雪，是凝住的气。</p>
+          </div>
+          <span class="plate__tag">Kunlun</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-orion-city.svg" alt="奥瑞恩巨城：黄铜与几何" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>奥瑞恩巨城</h3>
+            <p>黄铜的城，几何的城。每一块砖都有编号，每一条街都是一个可以念出来的句子。</p>
+          </div>
+          <span class="plate__tag">Orion</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-rift.svg" alt="界痕：发光的地裂" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>界痕</h3>
+            <p>宽三里，深不见底。夜里能听见里面有人在念名字，念到一半就停了。</p>
+          </div>
+          <span class="plate__tag">The Rift</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 四 · 场景 ============ -->
+  <section class="section" id="moments">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter IV · 场景</span>
+        <h2>三个瞬间，撑起了整部纪年</h2>
+        <p>
+          纪年里有无数个日子，但只有三个瞬间被反复描画：门开的那一刻，旗倒的那一刻，碑立的那一刻。
+          前两个属于战争，最后一个属于记得的人。
+        </p>
+      </div>
+      <div class="sec-head__r">Three Moments</div>
+    </div>
+
+    <div class="plates plates--asym">
+      <figure class="plate plate--full" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-gate.svg" alt="界门开启：光柱贯穿，两侧石柱对峙" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>界门开启</h3>
+            <p>
+              每七年开一次，开三个时辰。两侧各派十二人入内，商定界痕的「合法位置」。
+              一百四十七年来，商定了三十一次，界痕一次也没有遵守。但门还是照开——因为不开门，就没有「商定」这件事；
+              没有商定，两界就只剩下战争。
+            </p>
+          </div>
+          <span class="plate__tag">The Gate Opens</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-battlefield.svg" alt="第三次界战战场：残旗与断柱，血色天光" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>战场 · 第七年</h3>
+            <p>旗还在，人不在。第三次界战打了七年，双方都没有推进一里——因为界痕每年东移七里，战场自己会走。</p>
+          </div>
+          <span class="plate__tag">The Field</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media">
+          <img src="assets/img/scene-monument.svg" alt="界碑：孤碑立于界痕之上，左玉青右黄铜" loading="lazy">
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>界碑</h3>
+            <p>碑上四个字：界痕之碑。第四个字的最后一笔，是新的——因为每年都有人来补。</p>
+          </div>
+          <span class="plate__tag">The Monument</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 五 · 节点 ============ -->
+  <section class="section" id="nodes">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter V · 节点</span>
+        <h2>三次界战，一条会走的路</h2>
+        <p>
+          把三次界战画在同一张地图上，会看到一件荒谬的事：战场每年都在移动，而双方都以为自己在守土。
+          界痕不参与战争，它只是走。它走的时候，把所有人的「家」都变成了「前线」。
+        </p>
+      </div>
+      <div class="sec-head__r">Three Battles</div>
+    </div>
+
+    <article class="node" data-reveal>
+      <p class="node__year">Epoch I · 裂痕之年</p>
+      <h3 class="node__title">第一次界战 · 界痕初现</h3>
+      <p class="node__text">界痕出现五十三年后，两界第一次在痕边相遇。玄洲以为那是天罚的伤口，要封；奥瑞恩以为那是未被命名的空白，要填。双方都带着善意前来，然后打了起来。这一战只打了四十天，死了三千人——在后来两次界战面前，这个数字小得像一个注脚。但它确立了一件事：这道痕，不能由一方单独解释。</p>
+      <div class="node__grid">
+        <figure class="plate">
+          <div class="plate__media">
+            <img src="assets/img/map-battle1.svg" alt="第一次界战 · 界痕初现 地图" loading="lazy">
+          </div>
+          <figcaption class="plate__cap">
+            <div><h3>纪元 1180</h3><p>界痕位置、双方城池与主要战场。</p></div>
+            <span class="plate__tag">Map</span>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="node__text" style="font-size:13px;color:var(--bone-faint)">
+            图例：玉青圆点为玄洲城，黄铜方点为奥瑞恩城，交叉圆环为战场，白线为界痕。
+            打叉的城池表示该年已被除名或焚毁。
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="node" data-reveal>
+      <p class="node__year">Epoch II · 焚城之年</p>
+      <h3 class="node__title">第二次界战 · 界痕东移</h3>
+      <p class="node__text">界痕第一次越过玉京。玄洲的旧都陷落，白塔被焚。这一战打了十一年，是三次里最惨的一次。奥瑞恩的律法师在废墟上念了七十二个音节，把整座城从记录里除名——包括城里还活着的两万人。玄洲从此不再谈判，只守。</p>
+      <div class="node__grid">
+        <figure class="plate">
+          <div class="plate__media">
+            <img src="assets/img/map-battle2.svg" alt="第二次界战 · 界痕东移 地图" loading="lazy">
+          </div>
+          <figcaption class="plate__cap">
+            <div><h3>纪元 1342</h3><p>界痕位置、双方城池与主要战场。</p></div>
+            <span class="plate__tag">Map</span>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="node__text" style="font-size:13px;color:var(--bone-faint)">
+            图例：玉青圆点为玄洲城，黄铜方点为奥瑞恩城，交叉圆环为战场，白线为界痕。
+            打叉的城池表示该年已被除名或焚毁。
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="node is-now" data-reveal>
+      <p class="node__year">Epoch III · 未终之年</p>
+      <h3 class="node__title">第三次界战 · 至今</h3>
+      <p class="node__text">第三次界战没有正式宣战。它只是开始了，然后一直没有结束。双方在界痕两侧各驻军，每年界痕东移七里，两军就跟着东移七里。七年过去，战线没有推进一里，但战场已经向东走了四十九里。塞维鲁说，这一战他不知道为什么打。玉虚子说，他知道——为了让碑上那四个字还有人认。</p>
+      <div class="node__grid">
+        <figure class="plate">
+          <div class="plate__media">
+            <img src="assets/img/map-battle3.svg" alt="第三次界战 · 至今 地图" loading="lazy">
+          </div>
+          <figcaption class="plate__cap">
+            <div><h3>纪元 1508 — 至今</h3><p>界痕位置、双方城池与主要战场。</p></div>
+            <span class="plate__tag">Map</span>
+          </figcaption>
+        </figure>
+        <div>
+          <p class="node__text" style="font-size:13px;color:var(--bone-faint)">
+            图例：玉青圆点为玄洲城，黄铜方点为奥瑞恩城，交叉圆环为战场，白线为界痕。
+            打叉的城池表示该年已被除名或焚毁。
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 六 · 音景 ============ -->
+  <section class="section section--tight" id="soundscape">
+    <div class="sec-head" data-reveal>
+      <div class="sec-head__l">
+        <span class="sec-head__idx">Chapter VI · 音景</span>
+        <h2>两分半钟，一条界痕的呼吸</h2>
+        <p>
+          这段音景由四层构成：低频的地鸣（界痕本身）、中频的气流（玄洲）、高频的金属泛音（奥瑞恩），
+          以及一层始终不解决的持续音——那是两界都无法命名的部分。它不循环情绪，它循环等待。
+        </p>
+      </div>
+      <div class="sec-head__r">150s · Loop</div>
+    </div>
+
+    <div class="plates plates--2">
+      <figure class="plate" data-reveal>
+        <div class="plate__media" style="aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%,rgba(111,191,168,.10),transparent 70%)">
+          <div style="text-align:center;padding:24px">
+            <p style="font-family:var(--serif-en);font-size:11px;letter-spacing:.5em;color:var(--bone-faint);margin:0 0 14px">BGM · EPOCH</p>
+            <p style="font-family:var(--serif-cn);font-size:22px;letter-spacing:.2em;margin:0 0 8px">界痕之息</p>
+            <p style="font-size:12.5px;color:var(--bone-dim);margin:0">150 秒 · 单声道 · 无缝循环</p>
+          </div>
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>播放</h3>
+            <p>点击右下角音景按钮开始。默认静音，不自动播放——这是对读者的基本尊重。</p>
+          </div>
+          <span class="plate__tag">Audio</span>
+        </figcaption>
+      </figure>
+
+      <figure class="plate" data-reveal>
+        <div class="plate__media" style="aspect-ratio:16/9;display:flex;align-items:center;justify-content:center">
+          <div style="padding:28px;width:100%">
+            <p style="font-family:var(--serif-en);font-size:10px;letter-spacing:.4em;color:var(--bone-faint);margin:0 0 18px">FOUR LAYERS</p>
+            <div style="display:grid;gap:12px">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--line-soft);padding-bottom:8px"><span style="font-size:13px;color:var(--bone-dim)">地鸣 · Sub</span><span style="font-family:var(--serif-en);font-size:11px;color:var(--jade)">38 Hz</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--line-soft);padding-bottom:8px"><span style="font-size:13px;color:var(--bone-dim)">气流 · Air</span><span style="font-family:var(--serif-en);font-size:11px;color:var(--jade)">220 Hz</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--line-soft);padding-bottom:8px"><span style="font-size:13px;color:var(--bone-dim)">金属泛音 · Brass</span><span style="font-family:var(--serif-en);font-size:11px;color:var(--brass)">880 Hz</span></div>
+              <div style="display:flex;justify-content:space-between"><span style="font-size:13px;color:var(--bone-dim)">未解决持续音 · Drone</span><span style="font-family:var(--serif-en);font-size:11px;color:var(--cinnabar)">—</span></div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="plate__cap">
+          <div>
+            <h3>结构</h3>
+            <p>四层叠加，无鼓点，无旋律解决。最后一层永远差半个音，所以它听起来像「还没结束」。</p>
+          </div>
+          <span class="plate__tag">Layers</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__top">
+    <div class="foot__brand">
+      <p class="foot__desc">
+        裂界纪 · Epoch of the Rift<br>
+        一个关于「什么才算存在」的世界观概念站。<br>
+        全部图像为程序化生成 SVG，音景为程序合成 WAV，无外部素材依赖。
+      </p>
+    </div>
+    <div class="foot__cols">
+      <div class="foot__col">
+        <h4>章节</h4>
+        <a href="#prologue">序 · 裂界</a>
+        <a href="#realms">一 · 两界</a>
+        <a href="#figures">二 · 人物</a>
+        <a href="#scenes">三 · 景物</a>
+      </div>
+      <div class="foot__col">
+        <h4>继续</h4>
+        <a href="#moments">四 · 场景</a>
+        <a href="#nodes">五 · 节点</a>
+        <a href="#soundscape">六 · 音景</a>
+      </div>
+      <div class="foot__col">
+        <h4>设定</h4>
+        <span>纪元 1127 — 至今</span>
+        <span>界痕宽 3 里 / 年移 7 里</span>
+        <span>三次界战</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>裂界纪 · 概念展示站</span>
+    <span>SVG · Canvas · Web Audio</span>
+  </div>
+</footer>
+
+<div class="sound" role="group" aria-label="背景音景">
+  <button class="sound__btn" aria-label="播放或暂停背景音景" aria-pressed="false">
+    <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <span class="sound__label">Sound Off</span>
+</div>
+
+<script src="assets/js/field.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/ui.js"></script>
+</body>
+</html>
