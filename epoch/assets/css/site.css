@@ -43,7 +43,7 @@
 * { box-sizing: border-box; }
 
 html {
-  background: #F3EAD8;
+  background-color: #F3EAD8;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
@@ -55,14 +55,25 @@ html {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   display: block;
+  background:
+    radial-gradient(60% 45% at 22% 18%, rgba(246,232,205,.95), transparent 70%),
+    radial-gradient(55% 40% at 78% 32%, rgba(228,238,230,.85), transparent 72%),
+    radial-gradient(70% 50% at 50% 88%, rgba(244,228,214,.9), transparent 74%),
+    #F3EAD8;
+}
+
+/* 内容层压在壁纸之上，避免负层级在移动端 Safari 被根背景吞掉 */
+main, .foot {
+  position: relative;
+  z-index: 1;
 }
 
 body {
   margin: 0;
-  background: transparent;
+  background: #F3EAD8;
   color: var(--ink);
   font-family: var(--serif);
   font-size: 17px;
